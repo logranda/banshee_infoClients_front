@@ -1,0 +1,38 @@
+<form [formGroup]="firstFormGroup">
+  <mat-card-title class="mt-2 mb-4" style="align-content: center; text-align: center"><h3>Datos del cliente</h3>
+  </mat-card-title>
+  <mat-form-field class="col-6">
+    <mat-label>Nombre Completo</mat-label>
+    <input [(ngModel)]="data.fullName" formControlName="fullName" matInput placeholder="Ingresa el nombre"
+           required>
+  </mat-form-field>
+  <mat-form-field class="col-6">
+    <mat-label>NIT</mat-label>
+    <input [(ngModel)]="data.nit" formControlName="nit" matInput placeholder="Ingresa el nit"
+           required>
+  </mat-form-field>
+  <mat-form-field class="col-6">
+    <mat-label>Telefono</mat-label>
+    <input [(ngModel)]="data.phone" formControlName="phone" matInput placeholder="Ingresa el telefono"
+           required>
+  </mat-form-field>
+  <mat-form-field class="col-6">
+    <mat-label>límite de crédito</mat-label>
+    <input [(ngModel)]="data.creditLimit" appNumberOnly formControlName="creditLimit" matInput
+           placeholder="Ingresa el limite del credito"
+           required>
+  </mat-form-field>
+  <mat-form-field class="col-6">
+    <mat-label>Dirección</mat-label>
+    <input [(ngModel)]="data.address" formControlName="address" matInput placeholder="Ingresa la dirección"
+           required>
+  </mat-form-field>
+</form>
+<div class="mt-3">
+  <mat-dialog-actions style="align-content: center; justify-content: center; text-align: center">
+    <button (click)="onNoClick()" class="btn btn-primary" mat-button>Cancelar</button>
+    <button (click)="onClick()" [mat-dialog-close]="data" class="btn btn-primary" mat-button>Guardar</button>
+  </mat-dialog-actions>
+</div>
+
+

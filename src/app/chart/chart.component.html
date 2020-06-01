@@ -1,0 +1,13 @@
+<div class="chartdiv">
+    <div class="chart-wrapper">
+      <canvas baseChart
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [plugins]="barChartPlugins"
+        [legend]="barChartLegend"
+        [chartType]="barChartType">
+      </canvas>
+    </div>
+    <button class="btn btn-pimary btn-block" (click)="cancel()">Back</button>
+</div>

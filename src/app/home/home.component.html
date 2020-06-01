@@ -1,0 +1,33 @@
+<div *ngIf="authService.isAuthenticated()" class="home row d-flex justify-content-center">
+  <mat-card-content class="col-3">
+    <mat-card>
+      <mat-card-header class="text-center" style="place-content: center">
+        <mat-card-title class="text-center">CLIENTES</mat-card-title>
+      </mat-card-header>
+      <span [routerLink]="'/costumer'">
+        <img class="mt-3" alt="Photo of a Shiba Inu" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+      </span>
+    </mat-card>
+  </mat-card-content>
+  <mat-card-content class="col-3">
+    <mat-card>
+      <mat-card-header class="text-center" style="place-content: center">
+        <mat-card-title class="text-center">CONSULTAS</mat-card-title>
+      </mat-card-header>
+      <span [routerLink]="'/investor'">
+        <img class="mt-3" alt="Photo of a Shiba Inu" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+      </span>
+    </mat-card>
+  </mat-card-content>
+  <mat-card-content class="col-3">
+    <mat-card>
+      <mat-card-header class="text-center" style="place-content: center">
+        <mat-card-title class="text-center">INFORMES</mat-card-title>
+      </mat-card-header>
+      <span [routerLink]="'/chart'">
+        <img class="mt-3" alt="Photo of a Shiba Inu" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+      </span>
+    </mat-card>
+  </mat-card-content>
+</div>
+

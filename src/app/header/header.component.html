@@ -1,0 +1,69 @@
+<mat-toolbar *ngIf="authService.isAuthenticated()" color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <h1>Menu</h1>
+    <div class="container">
+      <div class="row float-right align-middle">
+        <!--        <i class="material-icons">person</i>-->
+        <div *ngIf="!authService.isAuthenticated()"><a [routerLink]="['/login']" class="btn btn-outline-primary">Sing
+          In</a></div>
+        <div *ngIf="authService.isAuthenticated()">
+          <button mat-button [matMenuTriggerFor]="afterMenu">{{authService.user.username}}
+          </button>
+          <mat-menu #afterMenu="matMenu" xPosition="after">
+            <button mat-menu-item (click)="logout()" type="submit">Sing Out</button>
+          </mat-menu>
+        </div>
+      </div>
+    </div>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="'/home'"> Pagina Principal </a>
+      <a mat-list-item [routerLink]="'/costumer'"> Clientes </a>
+      <a mat-list-item [routerLink]="'/#'"> Consultas </a>
+      <a mat-list-item [routerLink]="'/#'"> Informes </a>
+<!--      <div mat-list-item>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Mis Créditos
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <a mat-list-item [routerLink]="'#'">Detalle de Crédito</a>
+          <a mat-list-item [routerLink]="'/simulator'" (click)="sidenav.close()">Simula tu Credito</a>
+
+        </mat-expansion-panel>
+
+      </div>
+      <div mat-list-item>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Mi perfil
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <a mat-list-item [routerLink]="'#'">Información básica</a>
+          <a mat-list-item [routerLink]="'/changePassword'" (click)="sidenav.close()">Cambiar contraseña</a>
+          <a mat-list-item [routerLink]="'#'">Centro de notificaciones</a>
+          <a mat-list-item [routerLink]="'#'">Documentos</a>
+
+        </mat-expansion-panel>
+      </div>-->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh;">
+
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
